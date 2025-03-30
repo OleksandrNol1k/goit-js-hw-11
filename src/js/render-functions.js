@@ -7,7 +7,6 @@ const gallery = document.querySelector(".gallery");
 let lightbox = new SimpleLightbox(".gallery a")
 
 export function renderGallery(images) {
-    gallery.innerHTML = "";
     if (images.length === 0) {
         iziToast.error({
             title: "Error",
@@ -35,4 +34,8 @@ export function renderGallery(images) {
     `).join("");
     gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
+}
+
+export function clearGallery() {
+    gallery.innerHTML = "";
 }
